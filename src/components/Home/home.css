@@ -1,0 +1,52 @@
+:root {
+  --app-background-color: #F1F1F1;
+  --card-bgd-color: #9AC1F0;
+  --main-color3: #cc6699;
+  --main-color4: #538cc6;
+  --other-color1: #bb99ff;
+  --other-color2: #8cd9b3;
+  --other-color3: #d98cb3;
+  --other-color4: #8cb3d9;
+}
+
+
+
+.card-section {
+  margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 90vw;
+}
+
+.card {
+  flex: 1 1 calc(30% - 20px);
+  margin: 10px;
+  border: solid transparent;
+  border-radius: 10px;
+  background-color: var(--card-bgd-color);
+}
+
+.card > .level {
+  background-color: #ddd;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+
+}
+
+.image-card {
+  overflow: hidden; /* Ensure images don't overflow */
+  background-color: #f0f0f0; /* Optional: background color for image cards */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.image-card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+

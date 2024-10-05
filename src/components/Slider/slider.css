@@ -1,0 +1,25 @@
+.slider-strip {
+  background-color: #d1daeb;
+  height: 5vh;
+  margin: 1% 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden; 
+  white-space: nowrap;
+}
+
+.slider-text {
+  font-size: 1.2em;
+  display: inline-block; 
+  padding-left: 42%; 
+  animation: slide-left 30s linear infinite; 
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}

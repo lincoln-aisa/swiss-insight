@@ -1,0 +1,92 @@
+:root {
+  --app-background-color: #F1F1F1;
+  --app-header-color: #9AC1F0;
+  --fixed-header-color: #538cc6; 
+  --main-color4: #B0752E;
+  --other-color1: #8595A8;
+  --other-color2: #FC4444;
+  --other-color3: #d98cb3;
+  --other-color4: #A82C2C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  background-color: var(--app-background-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.header-slider-questionInput {
+  position: sticky;
+  top: 0;
+  background-color: var(--fixed-header-color);
+  padding-bottom: 0.01%;
+}
+
+.App-header {
+  background-color: var(--app-header-color);
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+}
+
+.app-logo {
+  /* border: solid black; */
+  height: 100%;
+  flex: 1; 
+}
+
+.nav-bar {
+  /*border: solid black; */
+  width: 30%;
+  
+}
+
+.nav-bar ul {
+  display: flex;                 
+  list-style: none;              
+  margin: 0;                     
+  padding: 0;                   
+  justify-content: space-evenly;
+}
+
+.nav-bar > ul > li {
+  margin-left: 20px;
+  /* border: solid rgb(240, 22, 22); */
+}
+
+.nav-bar ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Style for the individual links */
+.nav-bar ul li .nav-item {
+  text-decoration: none;         
+  color: #333;                   
+  font-weight: bold;             
+}
+
+.App-footer {
+  margin-top: 30px;
+  background-color: #d1daeb;
+  padding: 20px;
+}
+
+.App-footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9em;
+  color: black;
+}
