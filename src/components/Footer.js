@@ -3,7 +3,7 @@
 function Footer () {
   return (
     <footer className="App-footer">
-		  <span>© Copyright 2024, By Lincoln A.</span>
+		  <span>© 2024 Lincoln Aisagbonhi.</span>
 	  </footer>
   );
 }

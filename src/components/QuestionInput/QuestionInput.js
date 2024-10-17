@@ -6,8 +6,8 @@ function QuestionInput() {
       {/*<img />*/}
       <input 
         className="question-input-field"
-        type= "text"
-        placeholder= "  Ask me any question about Switzerland"
+        type= "search"
+        placeholder= "Hi, I'm Lora, Ask me any question about Switzerland"
         />
     </div>
   );

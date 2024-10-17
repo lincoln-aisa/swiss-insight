@@ -9,7 +9,20 @@
   --other-color4: #8cb3d9;
 }
 
+.intro-section {
+  margin: 5vh auto;
+}
 
+.intro-section > h1 {
+  text-align: center;
+}
+
+.intro-section > p {
+  text-align: center;
+  margin-top: 1.5vh;
+  font-size: large;
+  
+}
 
 .card-section {
   margin: 60px auto;
