@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+
 .slider-strip {
   background-color: #d1daeb;
   height: 5vh;
@@ -13,6 +15,7 @@
   background-color: red;
   min-height: 100%;
   text-align: center;
+  font-family: 'Nunito', sans-serif;
   z-index: 1;
   padding: 0 1rem;
   border: 0.3rem ridge rgba(211, 220, 50, .6);
@@ -22,7 +25,6 @@
   font-size: 1.2em;
   margin: auto 0;
   display: inline-block;
-  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -30,45 +32,6 @@
 .slider-text {
   font-size: 1.2em;
   display: inline-block; 
-  padding-left: 42%; 
-  animation: slide-left 70s linear infinite; 
+
 }
 
-@keyframes slide-left {
-  0% {
-    transform: translateX(100%); 
-  }
-  100% {
-    transform: translateX(-100%); 
-  }
-}
-
-
-
-
-/*.slider-strip {
-  background-color: #d1daeb;
-  height: 5vh;
-  margin: 1% 0;
-  display: flex;
-  align-items: center;
-  overflow: hidden; 
-  white-space: nowrap;
-}
-
-.slider-text {
-  font-size: 1.2em;
-  display: inline-block; 
-  padding-left: 42%; 
-  animation: slide-left 30s linear infinite; 
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(100%); 
-  }
-  100% {
-    transform: translateX(-100%); 
-  }
-}
-*/

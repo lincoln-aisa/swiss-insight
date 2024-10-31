@@ -9,9 +9,9 @@ function Slider() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const apiKey = process.env.news_api_key;
-    //const dateToday = new Date().toJSON().slice(0,10);
-    const url = `https://api.worldnewsapi.com/search-news?number=10&language=en&earliest-publish-date=2024-10-01&source-countries=ch&api-key=${apiKey }`;
+    const apiKey = process.env.REACT_APP_news_api_key;
+    //const dateToday = new Date().toJSON().slice(0,10); A fixed date is temporarily used
+    const url = `https://api.worldnewsapi.com/search-news?number=10&language=en&earliest-publish-date=2024-10-01&source-countries=ch&api-key=${apiKey}`;
 
     const fetchNews = async () => {
       try {
@@ -35,21 +35,23 @@ function Slider() {
       <div className="news-bar">
         <p>News Flash </p>
       </div>
-      <p className="slider-text">
-        {error ? (
-          error
-        ) : (
-          news.length > 0 ? (
-            news.map((item, index) => (
-              <span key={index}> { }
-                { item.title} &bull; 
-              </span>
-            ))
+      <marquee>
+        <p className="slider-text">
+          {error ? (
+            error
           ) : (
-            "Loading news..."
-          )
-        )}
-      </p>
+            news.length > 0 ? (
+              news.map((item, index) => (
+                <span key={index}> { }
+                  { item.title} &bull; 
+                </span>
+              ))
+            ) : (
+              "Loading news..."
+            )
+          )}
+        </p>
+      </marquee>
     </div>
   );
 }
