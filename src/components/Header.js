@@ -1,11 +1,13 @@
 
 import { Link } from "react-router-dom";
+import website_logo from './website_logo.png';
 
 function Header() {
   return (
     <div className="App-header">
       <div className="app-logo">
-        <p>Logo placeholder text</p>
+        <img src= {website_logo} alt="Website logo"/>
+        <h1>Swiss Insight</h1>
       </div>
       <nav className="nav-bar">
         <ul>
@@ -13,10 +15,10 @@ function Header() {
             <Link to="/" className="nav-item">Home</Link>
           </li>
           <li>
-            <Link to="/about" className="nav-item">About</Link>
+            <Link to="/about-us" className="nav-item">About</Link>
           </li>
           <li>
-            <Link to="/contact" className="nav-item">Contact</Link>
+            <Link to="/contact-us" className="nav-item">Contact</Link>
           </li>
         </ul>
       </nav>

@@ -38,10 +38,11 @@
   margin: 10px;
   border: solid transparent;
   border-radius: 10px;
+  text-decoration: none;
   background-color: var(--card-bgd-color);
 }
 
-.card > .level {
+.card .level {
   background-color: #ddd;
   color: black;
   font-size: 24px;
@@ -51,15 +52,21 @@
 
 }
 
+/*
+.level {
+  text-decoration: none;
+}
+  */
+
 .image-card {
-  overflow: hidden; /* Ensure images don't overflow */
-  background-color: #f0f0f0; /* Optional: background color for image cards */
-  border-radius: 8px; /* Optional: rounded corners */
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 8px; 
 }
 
 .image-card img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: auto; 
   display: block;
 }
 

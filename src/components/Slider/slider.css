@@ -21,7 +21,9 @@
 .news-bar > p {
   font-size: 1.2em;
   margin: auto 0;
-  display: inline-block; 
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 
