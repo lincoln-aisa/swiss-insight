@@ -1,24 +1,39 @@
-
 import "./slider.css";
 import React, { useState, useEffect } from "react";
-
 
 function Slider() {
   const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const apiKey = process.env.REACT_APP_news_api_key;
-    const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&qInTitle=swiss&country=ch&language=en&size=10&removeduplicate=1`;
-
     const fetchNews = async () => {
+      const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+      const cachedNews = JSON.parse(localStorage.getItem("newsData"));
+      const lastFetched = localStorage.getItem("newsFetchDate");
+      const apiKey = process.env.REACT_APP_news_api_key;
+
+      // If data is cached and was fetched today, use the cached data
+      if (cachedNews && lastFetched === today) {
+        setNews(cachedNews);
+        return;
+      }
+
+      // Otherwise, fetch fresh data from the API
+      const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&qInTitle=swiss&country=ch&language=en&size=10&removeduplicate=1`;
+
       try {
         const response = await fetch(url);
         if (!response.ok) {
-          throw new Error('Failed to fetch news');
+          throw new Error("Failed to fetch news");
         }
         const data = await response.json();
-        setNews(data.results); 
+        const newsData = data.results || [];
+
+        // Store fetched news and the date it was fetched in localStorage
+        localStorage.setItem("newsData", JSON.stringify(newsData));
+        localStorage.setItem("newsFetchDate", today);
+        
+        setNews(newsData);
       } catch (error) {
         setError("Unable to fetch news.");
         console.error("Error:", error);
@@ -40,9 +55,7 @@ function Slider() {
           ) : (
             news.length > 0 ? (
               news.map((item, index) => (
-                <span key={index}> { }
-                  { item.title} &bull; 
-                </span>
+                <span key={index}> {item.title} &bull; </span>
               ))
             ) : (
               "Loading news..."
@@ -55,4 +68,3 @@ function Slider() {
 }
 
 export default Slider;
-
