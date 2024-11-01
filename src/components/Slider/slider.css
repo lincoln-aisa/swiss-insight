@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;700&display=swap');
 
+:root {
+  --app-background-color: #F1F1F1;
+  --app-header-color: #9AC1F0;
+  --fixed-header-color: #538cc6; 
+  --slider-footer-color: #d1daeb;
+  --other-color1: #8595A8;
+  --other-color2: #FC4444;
+}
+
 .slider-strip {
-  background-color: #d1daeb;
+  background-color: var(--slider-footer-color);
   height: 5vh;
   margin: 1% 0;
   display: flex;

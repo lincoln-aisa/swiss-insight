@@ -5,10 +5,12 @@ import website_logo from './website_logo.png';
 function Header() {
   return (
     <div className="App-header">
-      <div className="app-logo">
-        <img src= {website_logo} alt="Website logo"/>
-        <h1>Swiss Insight</h1>
-      </div>
+      <Link to="/">
+        <div className="app-logo">
+          <img src= {website_logo} alt="Website logo"/>
+          <h1>Swiss Insight</h1>
+        </div>
+      </Link>
       <nav className="nav-bar">
         <ul>
           <li>

@@ -1,5 +1,4 @@
 
-// 2024-10-01 ${dateToday}
 import "./slider.css";
 import React, { useState, useEffect } from "react";
 
@@ -10,8 +9,7 @@ function Slider() {
 
   useEffect(() => {
     const apiKey = process.env.REACT_APP_news_api_key;
-    //const dateToday = new Date().toJSON().slice(0,10); A fixed date is temporarily used
-    const url = `https://api.worldnewsapi.com/search-news?number=10&language=en&earliest-publish-date=2024-10-01&source-countries=ch&api-key=${apiKey}`;
+    const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&qInTitle=swiss&country=ch&language=en&size=10&removeduplicate=1`;
 
     const fetchNews = async () => {
       try {
@@ -20,7 +18,7 @@ function Slider() {
           throw new Error('Failed to fetch news');
         }
         const data = await response.json();
-        setNews(data.news); 
+        setNews(data.results); 
       } catch (error) {
         setError("Unable to fetch news.");
         console.error("Error:", error);

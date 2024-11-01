@@ -7,8 +7,9 @@ function QuestionInput() {
       <input 
         className="question-input-field"
         type= "search"
-        placeholder= "Hi, I'm Lora, Ask me any question about Switzerland"
-        />
+        placeholder= "Hi, I'm Lora, I am still under development"
+      />
+      <button></button>
     </div>
   );
 }

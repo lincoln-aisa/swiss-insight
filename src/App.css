@@ -5,11 +5,9 @@
   --app-background-color: #F1F1F1;
   --app-header-color: #9AC1F0;
   --fixed-header-color: #538cc6; 
-  --main-color4: #B0752E;
+  --slider-footer-color: #d1daeb;
   --other-color1: #8595A8;
   --other-color2: #FC4444;
-  --other-color3: #d98cb3;
-  --other-color4: #A82C2C;
 }
 
 * {
@@ -44,7 +42,6 @@
 }
 
 .app-logo {
-  /* border: solid rgb(248, 16, 16); */
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -59,7 +56,9 @@
   text-align: justify;
 }
 
-.app-logo > h1 {
+.app-logo h1,
+.app-logo a h1 {
+  text-decoration: none;
   padding-left: 5px;
   margin: auto 5px;
   font-size: 1.5rem;
@@ -68,7 +67,6 @@
 }
 
 .nav-bar {
-  /*border: solid black; */
   width: 30%;
   
 }
@@ -83,7 +81,6 @@
 
 .nav-bar > ul > li {
   margin-left: 20px;
-  /* border: solid rgb(240, 22, 22); */
 }
 
 .nav-bar ul {
@@ -91,7 +88,6 @@
   list-style: none;
 }
 
-/* Style for the individual links */
 .nav-bar ul li .nav-item {
   text-decoration: none;         
   color: #333;                   
@@ -100,7 +96,7 @@
 
 .App-footer {
   margin-top: 30px;
-  background-color: #d1daeb;
+  background-color: var(--slider-footer-color);
   padding: 20px;
 }
 
