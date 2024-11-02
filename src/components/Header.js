@@ -4,7 +4,7 @@ import website_logo from './website_logo.png';
 
 function Header() {
   return (
-    <div className="App-header">
+    <main className="App-header">
       <Link to="/">
         <div className="app-logo">
           <img src= {website_logo} alt="Website logo"/>
@@ -24,7 +24,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </div>
+    </main>
   );
 }
 export default Header;
