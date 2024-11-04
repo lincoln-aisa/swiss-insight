@@ -8,8 +8,10 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
+  console.log("Request method:", req.method); // Log the request method
   if (req.method === 'POST') {
     const { message } = req.body;
+    console.log("Received message:", message); // Log the received message
 
     try {
       const response = await openai.createChatCompletion({
@@ -18,6 +20,7 @@ export default async function handler(req, res) {
       });
 
       const botMessage = response.data.choices[0].message.content;
+      res.setHeader("Cache-Control", "no-store");
       res.status(200).json({ botMessage });
     } catch (error) {
       console.error("Error connecting to OpenAI API:", error);

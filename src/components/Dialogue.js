@@ -30,7 +30,7 @@ function Dialogue({ userQuestion, onMinimize }) {
     if (!checkQuestionLimit()) {
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: "bot", text: "You've reached your daily question limit of 5. Please try again tomorrow." }
+        { sender: "bot", text: "You've reached your daily question limit of 10. Please try again tomorrow." }
       ]);
       return;
     }
@@ -80,7 +80,7 @@ function Dialogue({ userQuestion, onMinimize }) {
   return (
     <main className="dialogue-container">
       <div className="dialogue-header">
-        <h2>Chat with Lora</h2>
+        <h2>Swiss Insight</h2>
         <button onClick={onMinimize} className="minimize-button">_</button>
       </div>
       <div className="chat-window">

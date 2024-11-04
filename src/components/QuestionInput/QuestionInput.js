@@ -23,7 +23,7 @@ function QuestionInput({ onSubmit }) {
         <input 
           className="question-input-field"
           type= "text"
-          placeholder= "Hi, I'm Lora, I am still under development"
+          placeholder= "Hi, You can ask a question here"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
