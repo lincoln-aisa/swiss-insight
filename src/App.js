@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from './components/Home/Home';
 import AboutUs from './components/About/AboutUs';
@@ -14,15 +14,38 @@ import LivingInSwitzerland from './components/living-in-switzerland';
 import HealthcareAndSocialSystem from './components/healthcare-and-social-system';
 import UsefulToolsAndResources from './components/useful-tools-and-resources';
 import Footer from './components/Footer';
+import Dialogue from './components/Dialogue';
+import chatbot_icon from "./chatbot_icon.png"
 
 function App() {
+
+  const [showDialogue, setShowDialogue] = useState(false);
+  const [minimized, setMinimized] = useState(false);
+  const [userQuestion, setUserQuestion] = useState("");
+
+  const handleShowDialogue = (question) => {
+    setUserQuestion(question);
+    setShowDialogue(true);
+    setMinimized(false);
+  };
+
+  const handleMinimize = () => {
+    setMinimized(!minimized);
+  };
+
   return (
     <Router>
       <main className= "App">
         <div className= "header-slider-questionInput">
           <Header />
           <Slider />
-          <QuestionInput />
+          <QuestionInput onSubmit={handleShowDialogue} />
+          {showDialogue && !minimized && <Dialogue userQuestion={userQuestion} onMinimize={handleMinimize} />}
+          {minimized && (
+            <div className="chatbot-icon" onClick={() => setMinimized(false)}>
+              <img src={chatbot_icon} alt="Chatbot Icon" />
+            </div>
+          )}
         </div>
 
         <Routes>
