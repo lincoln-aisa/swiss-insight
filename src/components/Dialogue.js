@@ -55,7 +55,8 @@ function Dialogue({ userQuestion, onMinimize }) {
       console.error("Error fetching bot response:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: "bot", text: "Sorry, I'm having trouble responding right now." }
+        { sender: "bot", text: "Sorry, I'm still under development." }
+        // "Sorry, I'm having trouble responding right now."
       ]);
     } finally {
       setLoading(false);
