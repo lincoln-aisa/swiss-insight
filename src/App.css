@@ -117,7 +117,6 @@
 .chatbot-icon > img {
   max-width: 80%;
   border-radius: 50%;
-
   border: 3px solid var(--fixed-header-color);
   object-fit: cover;
 }
@@ -131,5 +130,9 @@
   .nav-bar > ul > li {
     margin-right: 0;
     text-align: center;
+  }
+  .chatbot-icon {
+    width: 10vw;
+    height: 10vw;
   }
 }

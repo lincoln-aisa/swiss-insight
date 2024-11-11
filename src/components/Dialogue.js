@@ -82,7 +82,7 @@ function Dialogue({ userQuestion, onMinimize }) {
     <main className="dialogue-container">
       <div className="dialogue-header">
         <h2>Swiss Insight</h2>
-        <button onClick={onMinimize} className="minimize-button">_</button>
+        <button onClick={onMinimize} className="minimize-button">-</button>
       </div>
       <div className="chat-window">
         {messages.map((msg, index) => (
