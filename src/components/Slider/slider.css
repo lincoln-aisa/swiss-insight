@@ -37,10 +37,24 @@
   font-weight: bold;
 }
 
-
 .slider-text {
   font-size: 1.2em;
   display: inline-block; 
 
+}
+
+@media (max-width: 768px) {
+  .news-bar > p {
+    font-size: 0.8em;
+    margin: auto 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .news-bar {
+    padding: 0 0.2rem;
+  }
+  .slider-strip {
+    height: 3vh;
+  }
 }
 

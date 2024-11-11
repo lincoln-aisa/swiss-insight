@@ -78,3 +78,10 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .dialogue-container {
+    width: 90vw;
+  }
+
+}

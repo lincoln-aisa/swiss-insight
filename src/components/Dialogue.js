@@ -37,7 +37,7 @@ function Dialogue({ userQuestion, onMinimize }) {
 
     setLoading(true);
     try {
-      // local server use: "http://localhost:5000/api/chatbot"
+      // local server url: "http://localhost:5000/api/chatbot"
       const response = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

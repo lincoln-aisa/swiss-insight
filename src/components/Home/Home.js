@@ -15,7 +15,7 @@ function Home() {
 
       <section className="intro-section">
         <h1>Welcome to Swiss Insight</h1>
-        <p>This website provides up-to-date information about Switzerland</p>
+        <p>Your Guide to Switzerland</p>
       </section>
 
       <section className="card-section">
