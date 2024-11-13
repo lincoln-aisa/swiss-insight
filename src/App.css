@@ -41,6 +41,10 @@
   color: black;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .app-logo {
   display: flex;
   flex-direction: row;

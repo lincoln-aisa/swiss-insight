@@ -37,11 +37,19 @@
   overflow-y: auto;
 }
 
-.user-message, .bot-message {
+.user-message {
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-left: 20%;
+  border-radius: 4px;
+  max-width: 75%;
+}
+
+.bot-message {
   padding: 8px;
   margin-bottom: 5px;
   border-radius: 4px;
-  max-width: 95%;
+  max-width: 75%;
 }
 
 .user-message {

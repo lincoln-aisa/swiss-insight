@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+
 :root {
   --app-background-color: #F1F1F1;
   --card-bgd-color: #9AC1F0;
-  --main-color3: #cc6699;
   --main-color4: #538cc6;
-  --other-color1: #bb99ff;
-  --other-color2: #8cd9b3;
   --other-color3: #d98cb3;
   --other-color4: #8cb3d9;
 }
@@ -21,7 +20,6 @@
   text-align: center;
   margin-top: 1.5vh;
   font-size: large;
-  
 }
 
 .card-section {
@@ -38,6 +36,7 @@
   margin: 10px;
   border: solid transparent;
   border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
   text-decoration: none;
   background-color: var(--card-bgd-color);
 }
@@ -49,14 +48,7 @@
   text-align: center;
   margin-bottom: 10px;
   font-weight: 700;
-
 }
-
-/*
-.level {
-  text-decoration: none;
-}
-  */
 
 .image-card {
   overflow: hidden;

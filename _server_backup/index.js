@@ -7,8 +7,8 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-app.use(cors()); // Allow cross-origin requests
-app.use(express.json()); // Parse JSON bodies
+app.use(cors()); 
+app.use(express.json());
 
 app.post('/api/chatbot', async (req, res) => {
   const { message } = req.body;

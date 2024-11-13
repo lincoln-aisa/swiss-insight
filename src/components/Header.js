@@ -5,7 +5,7 @@ import website_logo from './website_logo.png';
 function Header() {
   return (
     <main className="App-header">
-      <Link to="/">
+      <Link className="logo-link" to="/">
         <div className="app-logo">
           <img src= {website_logo} alt="Website logo"/>
           <h1>Swiss Insight</h1>
