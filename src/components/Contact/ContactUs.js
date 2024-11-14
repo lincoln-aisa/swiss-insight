@@ -1,12 +1,3 @@
-// Contact.js
-
-/*
-function Contact() {
-  return <h1>Contact Page</h1>;
-}
-
-export default Contact;
-*/
 
 import React, { useState } from 'react';
 import './contact.css';
@@ -27,7 +18,6 @@ function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Here, you could add additional form submission logic, such as sending data to an API.
   };
 
   return (

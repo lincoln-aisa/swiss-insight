@@ -1,16 +1,9 @@
 // About.js
-/*
-function About() {
-  return <h1>About Page</h1>;
-}
-
-export default About;
-*/
 
 import React from 'react';
 import './about.css';
-import swissImage1 from './Swiss-landscape-grass-river.jpg'; // Sample image path
-import swissImage2 from './Swiss-city-view.jpg'; // Sample image path
+import swissImage1 from './Swiss-landscape-grass-river.jpg'; 
+import swissImage2 from './Swiss-city-view.jpg'; 
 
 function AboutUs() {
   return (

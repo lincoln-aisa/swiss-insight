@@ -5,21 +5,23 @@
   --card-bgd-color: #9AC1F0;
   --main-color4: #538cc6;
   --other-color3: #d98cb3;
-  --other-color4: #8cb3d9;
+  --other-color5: #8cb3d9;
 }
 
-.intro-section {
+.home-intro-section {
   margin: 5vh auto;
 }
 
-.intro-section > h1 {
+.home-intro-section > h1 {
   text-align: center;
+  font-size: 2.5rem;
 }
 
-.intro-section > p {
+.home-intro-section > p {
   text-align: center;
   margin-top: 1.5vh;
-  font-size: large;
+  font-size: 1.5em;
+  color: #555;
 }
 
 .card-section {
@@ -44,7 +46,7 @@
 .card .level {
   background-color: #ddd;
   color: black;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 10px;
   font-weight: 700;
@@ -62,3 +64,29 @@
   display: block;
 }
 
+@media (max-width: 768px) {
+  .card .level {
+    font-size: 0.9rem;
+  }
+  .card {
+    margin: 5px;
+  }
+
+  .home-intro-section {
+    margin: 2vh auto;
+  }
+
+  .home-intro-section > h1 {
+    font-size: 1.5rem;
+  }
+  
+  .home-intro-section > p {
+    text-align: center;
+    margin-top: 1.0vh;
+    font-size: 1.0em;
+  }
+
+  .card-section {
+    margin-top: 30px;
+  }
+}

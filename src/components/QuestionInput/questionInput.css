@@ -4,7 +4,7 @@
   height: 100%;
   width: 80%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: #F1F1F1;
   border-color: transparent;
   border: none;
@@ -36,7 +36,6 @@ button > img {
   border: solid black 3px;
   border-radius: 30px;
   background-color: #F1F1F1;
-
   justify-content: space-between;
   max-width: 50vw;
   height: 5vh;
@@ -49,5 +48,7 @@ button > img {
     margin: 2vh auto 1vh;
     height: 3vh;
   }
-
+  .question-input-field {
+    font-size: 0.8rem;
+  }
 }

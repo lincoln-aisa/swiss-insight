@@ -92,7 +92,9 @@
 .nav-bar ul li .nav-item {
   text-decoration: none;         
   color: #333;                   
-  font-weight: bold;             
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;      
 }
 
 .App-footer {
@@ -138,5 +140,26 @@
   .chatbot-icon {
     width: 10vw;
     height: 10vw;
+  }
+  .App-footer {
+    margin-bottom: 0;
+  }
+
+  .app-logo h1 {
+    font-size: 1.0rem;
+  }
+
+  .app-logo > img {
+    width: 30px;
+    height: 30px;
+    padding-left: 2.5px;
+  }
+
+  .App-header {
+    min-height: 7vh;
+  }
+
+  .nav-bar ul li .nav-item {
+    font-size: 0.8rem;
   }
 }

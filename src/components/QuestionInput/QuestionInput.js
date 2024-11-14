@@ -10,8 +10,8 @@ function QuestionInput({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (question.trim()) {
-      onSubmit(question);  // Pass the question to the parent component (App.js)
-      setQuestion(""); // Clear the input field after submission
+      onSubmit(question); 
+      setQuestion(""); 
     }
   };
 

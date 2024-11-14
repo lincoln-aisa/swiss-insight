@@ -13,7 +13,7 @@ function Home() {
   return (
     <main>
 
-      <section className="intro-section">
+      <section className="home-intro-section">
         <h1>Welcome to Swiss Insight</h1>
         <p>Your Guide to Switzerland</p>
       </section>
@@ -58,7 +58,7 @@ function Home() {
 
         <Link to= "/components/healthcare-and-social-system" className="card">
           <article className="card">
-            <h2 className="level">Healthcare and Social System</h2>
+            <h2 className="level">Healthcare & Social System</h2>
             <div className="image-card">
               <img src={card_image_5} className="card_image" alt="card_image_5" />
             </div>
@@ -67,7 +67,7 @@ function Home() {
 
         <Link to= "/components/useful-tools-and-resources" className="card">
           <article className="card">
-            <h2 className="level">Useful tools and resources</h2>
+            <h2 className="level">Useful tools & resources</h2>
             <div className="image-card">
               <img src={card_image_6} className="card_image" alt="card_image_6" />
             </div>

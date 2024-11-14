@@ -7,18 +7,17 @@ function Slider() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+      const today = new Date().toISOString().split("T")[0];
       const cachedNews = JSON.parse(localStorage.getItem("newsData"));
       const lastFetched = localStorage.getItem("newsFetchDate");
       const apiKey = process.env.REACT_APP_news_api_key;
 
-      // If data is cached and was fetched today, use the cached data
       if (cachedNews && lastFetched === today) {
         setNews(cachedNews);
         return;
       }
 
-      // Otherwise, fetch fresh data from the API
+      // Otherwise, fetch
       const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&qInTitle=swiss&country=ch&language=en&size=10&removeduplicate=1`;
 
       try {
@@ -29,7 +28,6 @@ function Slider() {
         const data = await response.json();
         const newsData = data.results || [];
 
-        // Store fetched news and the date it was fetched in localStorage
         localStorage.setItem("newsData", JSON.stringify(newsData));
         localStorage.setItem("newsFetchDate", today);
         
@@ -55,11 +53,8 @@ function Slider() {
           ) : (
             news.length > 0 ? (
               news.map((item, index) => (
-                <span key={index}> {item.title} &bull; </span>
-              ))
-            ) : (
-              "Loading news..."
-            )
+                <span key={index}> {item.title} &bull; </span> ))
+            ) : ( "Loading news..." )
           )}
         </p>
       </marquee>

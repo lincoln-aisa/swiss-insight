@@ -1,21 +1,4 @@
 // TravelToSwitzerland Page
-/*
-import React from "react";
-import website_logo from './website_logo.png';
-
-function TravelToSwitzerland() {
-  return (
-    <section>
-      <h1>TravelToSwitzerland Page</h1>;
-      <img src={website_logo} className="card_image" alt="card_image_1" />
-    </section>
-    
-  );
-}
-
-export default TravelToSwitzerland;
-----------------
-*/
 
 import React from 'react';
 import './travel-to-switzerland.css';

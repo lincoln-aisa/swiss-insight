@@ -56,5 +56,8 @@
   .slider-strip {
     height: 3vh;
   }
+  .slider-text {
+    font-size: 0.8em;  
+  }
 }
 
