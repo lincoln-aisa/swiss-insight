@@ -1,8 +1,12 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
-import "./dialogue.css"
+import "./dialogue.css";
 
 function Dialogue({ userQuestion, onMinimize }) {
-  const [messages, setMessages] = useState([{ sender: "user", text: userQuestion }]);
+  const [messages, setMessages] = useState(() => {
+    const savedMessages = localStorage.getItem("chatMessages");
+    return savedMessages ? JSON.parse(savedMessages) : [{ sender: "user", text: userQuestion }];
+  });
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const MAX_QUESTIONS_PER_DAY = 20;
@@ -28,17 +32,20 @@ function Dialogue({ userQuestion, onMinimize }) {
 
   const getBotResponse = useCallback(async (message) => {
     if (!checkQuestionLimit()) {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "bot", text: "You've reached your daily question limit of 10. Please try again tomorrow." }
-      ]);
+      setMessages((prevMessages) => {
+        const updatedMessages = [
+          ...prevMessages,
+          { sender: "bot", text: "You've reached your daily question limit of 10. Please try again tomorrow." }
+        ];
+        localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
+        return updatedMessages;
+      });
       return;
     }
 
     setLoading(true);
     try {
-      // local server url: "http://localhost:5000/api/chatbot"
-      const response = await fetch("http://localhost:5000/api/chatbot", {
+      const response = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
@@ -47,17 +54,24 @@ function Dialogue({ userQuestion, onMinimize }) {
       if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "bot", text: data.botMessage }
-      ]);
+      setMessages((prevMessages) => {
+        const updatedMessages = [
+          ...prevMessages,
+          { sender: "bot", text: data.botMessage }
+        ];
+        localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
+        return updatedMessages;
+      });
     } catch (error) {
       console.error("Error fetching bot response:", error);
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "bot", text: "Sorry, I'm still under development." }
-        // "Sorry, I'm having trouble responding right now."
-      ]);
+      setMessages((prevMessages) => {
+        const updatedMessages = [
+          ...prevMessages,
+          { sender: "bot", text: "Sorry, I'm still under development." }
+        ];
+        localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
+        return updatedMessages;
+      });
     } finally {
       setLoading(false);
     }
@@ -66,7 +80,11 @@ function Dialogue({ userQuestion, onMinimize }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim()) {
-      setMessages([...messages, { sender: "user", text: input }]);
+      setMessages((prevMessages) => {
+        const updatedMessages = [...prevMessages, { sender: "user", text: input }];
+        localStorage.setItem("chatMessages", JSON.stringify(updatedMessages)); 
+        return updatedMessages;
+      });
       await getBotResponse(input);
       setInput("");
     }
